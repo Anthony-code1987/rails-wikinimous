@@ -1,0 +1,16 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <h1 class="navbar-brand">Wikinimous</h1>
+    <form class="d-flex" role="new_article">
+      <button class="btn btn-outline-success" type="submit"><%= link_to "New article", new_article_path %></button>
+    </form>
+  </div>
+</nav>
+<ul>
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article) do %>
+    <li><%= article.title %></li>
+    <% end %>
+    <li><%= article.content %></li>
+  <% end %>
+</ul>
